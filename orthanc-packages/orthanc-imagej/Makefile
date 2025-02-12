@@ -5,9 +5,6 @@ ifeq ($(INSTALL_ROOT),)
 $(error INSTALL_ROOT not set)
 endif
 
-#
-# Note that the submake usage explicitly uses make- not $(MAKE)
-#
 all:
 	@true
 
