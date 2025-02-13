@@ -7,7 +7,7 @@
 # from a config file. If the file is not present,
 # we go with DHCP.
 #
-nmcli con down 'Wired connection 1' > /dev/null 2>&1
+#nmcli con down 'Wired connection 1' > /dev/null 2>&1
 
 #
 # This is not idempotent- it's a oneshot when booting.
@@ -20,14 +20,14 @@ if [[ -f /code_dark/config/network ]]; then
   clause=
  fi
 fi
-if [[ -n "$clause" ]]; then
- nmcli con modify --temporary 'Wired connection 1' ipv4.method manual ipv4.addresses $clause
- echo setting static network address $clause
-else
- nmcli con modify --temporary 'Wired connection 1' ipv4.method auto
- echo setting automatic network address
-fi
-nmcli con up 'Wired connection 1'
+#if [[ -n "$clause" ]]; then
+# nmcli con modify --temporary 'Wired connection 1' ipv4.method manual ipv4.addresses $clause
+# echo setting static network address $clause
+#else
+# nmcli con modify --temporary 'Wired connection 1' ipv4.method auto
+# echo setting automatic network address
+#fi
+#nmcli con up 'Wired connection 1'
 
 #
 # Change Dicom Port if there is a file containing a new port number in it.
